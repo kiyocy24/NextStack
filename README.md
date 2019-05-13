@@ -12,7 +12,7 @@
 Copy `NextStack-*.jar` to plugins directory
 
 ## Licence
-MIT
+[MIT](https://github.com/kanakiyo314/NextStack/blob/master/LICENCE)
 
 ## Author
 [kanakiyo314](https://github.com/kanakiyo314)

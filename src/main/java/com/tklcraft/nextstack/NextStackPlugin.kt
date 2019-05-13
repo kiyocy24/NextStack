@@ -8,13 +8,18 @@ import org.bukkit.plugin.java.JavaPlugin
 class NextStackPlugin : JavaPlugin() {
 
     override fun onEnable() {
-        // Plugin startup logic
+        // Save default config
         saveDefaultConfig()
+        info("Save default config.")
+
         // Set listener
         server.pluginManager.registerEvents(BlockPlaceListener, pluginInstance)
         server.pluginManager.registerEvents(LoginListener, pluginInstance)
+        info("Set listener.")
+
         // Set command
         getCommand("nextstack")?.setExecutor(NextStackCommand)
+        info("Set command.")
     }
 
     override fun onDisable() {
