@@ -48,8 +48,10 @@ object NextStackCommand : CommandExecutor, TabCompleter {
 
     override fun onTabComplete(sender: CommandSender, command: Command, alias: String, args: Array<out String>): MutableList<String> {
         val tabList = mutableListOf<String>()
-        if (sender.hasPermission(ON)) tabList.add(ON)
-        if (sender.hasPermission(OFF)) tabList.add(OFF)
+        if (sender.hasPermission("nt")) {
+            tabList.add(ON)
+            tabList.add(OFF)
+        }
         return tabList
     }
 }
