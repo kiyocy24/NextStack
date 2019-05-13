@@ -4,6 +4,7 @@ import org.bukkit.GameMode
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.block.BlockPlaceEvent
+import org.bukkit.inventory.EquipmentSlot
 
 object BlockPlaceListener : Listener {
     private const val SLOT_NUM = 9
@@ -15,19 +16,28 @@ object BlockPlaceListener : Listener {
 
         val inventory = e.player.inventory
         val itemStack = if( e.itemInHand.amount == 1) e.itemInHand else return
+        val hand = e.hand
 
-        inventory.clear(inventory.heldItemSlot)
+        if (hand == EquipmentSlot.HAND) {
+            inventory.clear(inventory.heldItemSlot)
+        }
         val inventoryIndex = inventory.first(itemStack.type).run {
             if (this < 0) return
             else this
         }
 
-        if (inventoryIndex < SLOT_NUM) {
-            inventory.heldItemSlot = inventoryIndex
+        val nextItemStack = inventory.getItem(inventoryIndex)
+        if (hand == EquipmentSlot.HAND) {
+            if (inventoryIndex < SLOT_NUM) {
+                inventory.heldItemSlot = inventoryIndex
+            }
+            else {
+                inventory.setItem(inventory.heldItemSlot, nextItemStack)
+                inventory.clear(inventoryIndex)
+            }
         }
-        else {
-            val nextItemStack = inventory.getItem(inventoryIndex)
-            inventory.setItem(inventory.heldItemSlot, nextItemStack)
+        else if (hand == EquipmentSlot.OFF_HAND) {
+            inventory.setItemInOffHand(nextItemStack)
             inventory.clear(inventoryIndex)
         }
     }
