@@ -1,0 +1,5 @@
+name: NextStack
+version: @version@
+main: com.tklcraft.nextstack.NextStackPlugin
+api-version: '1.13'
+authors: [kanakiyo314]
