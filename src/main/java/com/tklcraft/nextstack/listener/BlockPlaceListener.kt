@@ -1,4 +1,4 @@
-package com.tklcraft.nextstack
+package com.tklcraft.nextstack.listener
 
 import org.bukkit.GameMode
 import org.bukkit.event.EventHandler
@@ -22,9 +22,6 @@ object BlockPlaceListener : Listener {
             else this
         }
 
-        info("inventoryIndex: $inventoryIndex")
-
-
         if (inventoryIndex < SLOT_NUM) {
             inventory.heldItemSlot = inventoryIndex
         }
@@ -33,8 +30,6 @@ object BlockPlaceListener : Listener {
             inventory.setItem(inventory.heldItemSlot, nextItemStack)
             inventory.clear(inventoryIndex)
         }
-
-        info("Next stack.")
     }
 
 }

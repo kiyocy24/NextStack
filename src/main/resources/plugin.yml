@@ -3,3 +3,13 @@ version: @version@
 main: com.tklcraft.nextstack.NextStackPlugin
 api-version: '1.13'
 authors: [kanakiyo314]
+commands:
+  nextstack:
+    description: Setting NextStack.
+    aliases: nt
+    usage: /<command> on | off
+
+permissions:
+  nt:
+    description: Give access to all NextStack commands
+    default: true
