@@ -1,5 +1,7 @@
 package com.tklcraft.nextstack.listener
 
+import com.tklcraft.nextstack.next
+import com.tklcraft.nextstack.pluginInstance
 import org.bukkit.GameMode
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -11,6 +13,7 @@ object BlockPlaceListener : Listener {
 
     @EventHandler
     fun onBlockPlaceListener(e : BlockPlaceEvent) {
+        if (!pluginInstance.config.getBoolean("uuids.${e.player.uniqueId}.enabled")) return
         if (e.player.gameMode != GameMode.SURVIVAL) return
         if (e.isCancelled) return
 
@@ -18,10 +21,12 @@ object BlockPlaceListener : Listener {
         val itemStack = if( e.itemInHand.amount == 1) e.itemInHand else return
         val hand = e.hand
 
-        if (hand == EquipmentSlot.HAND) {
-            inventory.clear(inventory.heldItemSlot)
+        if (hand == EquipmentSlot.HAND &&
+                e.blockPlaced.type != inventory.getItem(inventory.heldItemSlot)?.type) {
+            return
         }
-        val inventoryIndex = inventory.first(itemStack.type).run {
+
+        val inventoryIndex = inventory.next(itemStack.type, inventory.heldItemSlot).run {
             if (this < 0) return
             else this
         }
