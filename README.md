@@ -1,4 +1,4 @@
-# NextStack
+# NextStack Ver. 1.1
 **Spigot Plugin**
 
 ## Functions
