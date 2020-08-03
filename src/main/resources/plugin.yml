@@ -2,7 +2,7 @@ name: NextStack
 version: @version@
 main: com.tklcraft.nextstack.NextStackPlugin
 api-version: '1.16'
-authors: [kanakiyo314]
+authors: [kiyocy24]
 commands:
   nextstack:
     description: Setting NextStack.
