@@ -1,12 +1,12 @@
 name: NextStack
 version: @version@
 main: com.tklcraft.nextstack.NextStackPlugin
-api-version: '1.13'
+api-version: '1.16'
 authors: [kanakiyo314]
 commands:
   nextstack:
     description: Setting NextStack.
-    aliases: nt
+    aliases: ns
     usage: /<command> on | off
 
 permissions:

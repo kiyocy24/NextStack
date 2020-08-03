@@ -21,8 +21,7 @@ object BlockPlaceListener : Listener {
         val itemStack = if( e.itemInHand.amount == 1) e.itemInHand else return
         val hand = e.hand
 
-        if (hand == EquipmentSlot.HAND &&
-                e.blockPlaced.type != inventory.getItem(inventory.heldItemSlot)?.type) {
+        if (hand == EquipmentSlot.HAND && e.itemInHand.type != inventory.getItem(inventory.heldItemSlot)?.type) {
             return
         }
 
