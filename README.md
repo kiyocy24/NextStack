@@ -2,13 +2,18 @@
 **Spigot Plugin**
 
 ## Functions
-- When the stack runs out during block installation, set ones in an item slot from inventory
-- Switch on/off of NextStack plugin for each user
+- When you run out of stacks in hand, your inventory will be automatically refilled if there is another stack in your inventory
+- Switch on/off of NextStack plugin for each player
+- Most items that can be stacked, such as blocks, seeds, and saplings, are automatically replenished
 
 ## Commands
-- `nextstack < on | off >` Switch on/off of plugin
+- `nextstack < on | off >` Switch on/off of plugin each player
+
+## Requirement
+- Bukkit version 1.2 or later
 
 ## Installation
+
 Copy `NextStack-*.jar` to plugins directory
 
 ## Licence
