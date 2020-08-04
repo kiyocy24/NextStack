@@ -10,7 +10,7 @@
 - `nextstack < on | off >` Switch on/off of plugin each player
 
 ## Requirement
-- Bukkit version 1.4 or later
+- Bukkit/Spigot version 1.4 or later
 
 ## Installation
 [Download](https://github.com/kiyocy24/NextStack/raw/master/NextStack-1.1.jar)
