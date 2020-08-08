@@ -12,8 +12,8 @@
 ## Requirement
 - Bukkit/Spigot version 1.4 or later
 
-## Installation
-[Download](https://github.com/kiyocy24/NextStack/raw/master/NextStack-1.1.jar)
+## Resource
+[Download](https://github.com/kiyocy24/NextStack/releases/download/1.1/NextStack-1.1.jar)
 
 Copy `NextStack-*.jar` to plugins directory
 
